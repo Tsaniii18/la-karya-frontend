@@ -23,6 +23,17 @@ interface ApiError {
   message?: string | string[];
 }
 
+export interface PendingAccount {
+  id: number;
+  employeeNumber: string;
+  name: string;
+  email: string;
+  accountStatus: 'PENDING';
+  createdAt: string;
+  role: { name: 'USER' | 'MANAGER' };
+  department: { name: DepartmentName };
+}
+
 const savedToken = localStorage.getItem('access_token');
 
 export const authToken = ref<string | null>(savedToken);
@@ -94,4 +105,14 @@ export async function logout() {
   } finally {
     clearAuth();
   }
+}
+
+export function getPendingAccounts() {
+  return apiRequest<PendingAccount[]>('/accounts/pending');
+}
+
+export function approveAccount(userId: number) {
+  return apiRequest<unknown>(`/accounts/${userId}/approve`, {
+    method: 'PATCH',
+  });
 }
