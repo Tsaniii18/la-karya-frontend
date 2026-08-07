@@ -30,18 +30,18 @@
         </p>
 
         <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <button
-            type="button"
+          <RouterLink
+            to="/login"
             class="w-full rounded-lg bg-primary px-7 py-4 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(15,39,71,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/95 hover:shadow-[0_14px_32px_rgba(15,39,71,0.24)] focus:outline-2 focus:outline-offset-2 focus:outline-primary sm:w-auto"
           >
-            Mulai dengan <span class="text-white">La</span><span class="text-[#9FC3E3]">Karya</span>
-          </button>
-          <button
-            type="button"
+            Mulai dengan LaKarya
+          </RouterLink>
+          <RouterLink
+            to="/register"
             class="w-full rounded-lg border border-border bg-surface/80 px-6 py-4 text-sm font-semibold text-primary transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-soft hover:bg-surface focus:outline-2 focus:outline-offset-2 focus:outline-primary sm:w-auto"
           >
             Belum punya akun? Buat akun
-          </button>
+          </RouterLink>
         </div>
       </div>
 
